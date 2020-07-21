@@ -2,6 +2,7 @@ import React from 'react';
 import UserContext from '../context/UserContext';
 
 function UserAvatar() {
+    
     return (
         <UserContext.Consumer>
             {user =>

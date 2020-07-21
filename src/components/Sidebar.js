@@ -1,8 +1,8 @@
 import React from 'react';
 import UserInfo from './UserInfo';
 
-function Sidebar(props) {
-  return <UserInfo user={props.user}/>;
+function Sidebar() {
+  return <UserInfo />;
 }
 
 export default Sidebar;

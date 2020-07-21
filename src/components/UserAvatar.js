@@ -1,11 +1,17 @@
 import React from 'react';
+import UserContext from '../context/UserContext';
 
-function UserAvatar(props) {
-    return <img
-        className={`user-avatar`}
-        alt={props.user.name}
-        src={props.user.avatar}
-    />;
+function UserAvatar() {
+    return (
+        <UserContext.Consumer>
+            {user =>
+                (<img
+                    className={`user-avatar`}
+                    alt={user.name}
+                    src={user.avatar}
+                />)
+            }
+        </UserContext.Consumer>);
 }
 
 export default UserAvatar;

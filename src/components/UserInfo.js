@@ -1,17 +1,23 @@
 import React from 'react';
 import UserAvatar from './UserAvatar';
+import UserContext from '../context/UserContext';
 
-function UserInfo(props) {
-    return <div className="user-stats">
-        <div>
-            <UserAvatar user={props.user} />
-        </div>
-        <div className="info">
-            <div>{props.user.name}</div>
-            <div>{props.user.email}</div>
-            <div>{props.user.city}</div>
-        </div>
-    </div>;
+function UserInfo() {
+    return (
+        <UserContext.Consumer>
+            {user =>
+                <div className="user-stats">
+                    <div>
+                        <UserAvatar />
+                    </div>
+                    <div className="info">
+                        <div>{user.name}</div>
+                        <div>{user.email}</div>
+                        <div>{user.city}</div>
+                    </div>
+                </div>
+            }
+        </UserContext.Consumer>);
 }
 
 export default UserInfo;

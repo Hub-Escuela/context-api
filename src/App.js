@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Layout from './components/Layout';
 import MyContent from './components/MyContent';
+import UserContext from './context/UserContext';
 
 class App extends React.Component {
   state = {
@@ -14,12 +15,13 @@ class App extends React.Component {
     }
   };
   render() {
-    const { user } = this.state;
     return (
       <div className="app">
-        <Layout user={user}>
-          <MyContent user={user}/>
-        </Layout>
+        <UserContext.Provider value={this.state.user}>
+          <Layout>
+            <MyContent/>
+          </Layout>
+        </UserContext.Provider>
       </div>
     );
   }

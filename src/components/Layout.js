@@ -5,10 +5,10 @@ import Sidebar from './Sidebar';
 function Layout(props) {
   return <div>
       <nav>
-          <UserAvatar user={props.user} />
+          <UserAvatar />
       </nav>
       <div className="body">
-          <Sidebar user={props.user}/>
+          <Sidebar />
           {props.children}
       </div>
   </div>;

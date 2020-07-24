@@ -25,14 +25,16 @@ const App = () => {
     avatar: "https://picsum.photos/100",
     name: "Random",
     email: "someone@random.com",
-    city: "Some Location",
-    handleClick: handleClick,
-    handleChange: handleChange,
+    city: "Some Location"
   });
 
   return (
     <div className="app">
-      <UserContext.Provider value={user}>
+      <UserContext.Provider value={{
+        user: user,
+        handleClick: handleClick,
+        handleChange: handleChange
+      }}>
         <Layout>
           <MyContent />
         </Layout>

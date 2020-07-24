@@ -5,11 +5,11 @@ function UserAvatar() {
     
     return (
         <UserContext.Consumer>
-            {user =>
+            {context =>
                 (<img
                     className={`user-avatar`}
-                    alt={user.name}
-                    src={user.avatar}
+                    alt={context.user.name}
+                    src={context.user.avatar}
                 />)
             }
         </UserContext.Consumer>);

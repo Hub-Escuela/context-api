@@ -8,7 +8,7 @@ class MyContent extends React.Component {
   }
 
   async componentDidMount() {
-    const user = this.context;
+    const {user} = this.context;
     console.log(user);
     if (user.name === "Random") {
       const response = await fetch("https://api.ipify.org?format=json");
